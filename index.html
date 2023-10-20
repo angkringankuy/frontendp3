@@ -19,16 +19,16 @@
           <form>
             <div class="field">
               <div class="control">
-                <input class="input is-medium is-rounded" id="username" placeholder="Username" autocomplete="username" required />
+                <input class="input is-medium is-rounded" id="username" placeholder="Username" />
               </div>
             </div>
             <div class="field">
               <div class="control">
-                <input class="input is-medium is-rounded" id="password" placeholder="**********" autocomplete="current-password" required />
+                <input class="input is-medium is-rounded" id="password" placeholder="**********" />
               </div>
             </div>
             <br />
-            <button class="button is-block is-fullwidth is-primary is-medium is-rounded" type="submit">
+            <button class="button is-block is-fullwidth is-primary is-medium is-rounded" id="button" type="submit" onclick="PostSignUp()">
               Login
             </button>
           </form>
@@ -48,6 +48,10 @@
         </div>
       </div>
     </section>
+    <div class="container">
+      <div class="notification is-primary" id="pesan"></div>
+     </div>
+ 
   </body>
 <script type="module" src="./kebutuhan/js/post.js"></script>
 </html>
