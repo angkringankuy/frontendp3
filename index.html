@@ -8,7 +8,7 @@
     <title>Login</title>
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/bulma@0.9.4/css/bulma.min.css" />
-    <link rel="stylesheet" type="text/css" href="kebutuhan/style.css">
+    <link rel="stylesheet" type="text/css" href="./kebutuhan/css/style.css">
   </head>
 
   <body>
@@ -19,12 +19,12 @@
           <form>
             <div class="field">
               <div class="control">
-                <input class="input is-medium is-rounded" type="email" placeholder="Username" autocomplete="username" required />
+                <input class="input is-medium is-rounded" id="username" placeholder="Username" autocomplete="username" required />
               </div>
             </div>
             <div class="field">
               <div class="control">
-                <input class="input is-medium is-rounded" type="password" placeholder="**********" autocomplete="current-password" required />
+                <input class="input is-medium is-rounded" id="password" placeholder="**********" autocomplete="current-password" required />
               </div>
             </div>
             <br />
@@ -49,5 +49,5 @@
       </div>
     </section>
   </body>
-
+<script type="module" src="./kebutuhan/js/post.js"></script>
 </html>
