@@ -15,19 +15,17 @@ export default function PostSignUp(){
 
 }
 function responseData(result) {
-    if (result.error) {
-        if (result.message === "Password Salah") {
-            // Jika pesan kesalahan adalah "password salah", tampilkan pesan yang sesuai
-            setInner("pesan", "Password yang Anda masukkan salah. Silakan coba lagi.");
-        } else {
-            // Pesan kesalahan lainnya
-            setInner("pesan", result.message);
-        }
-        window.location.href = "404.html"; // Gantilah "404.html" dengan halaman error yang sesuai.
-    } else {
-        // Jika tidak ada kesalahan, lanjutkan dengan logika yang ada. tes tess
-        setInner("pesan", result.message);
-        setCookieWithExpireHour("token", result.token, 2);
+    setInner("pesan", result.message);
+    setCookieWithExpireHour("token", result.token, 2);
+    
+    if (result.message === "Password salah") {
+        // Jika pesan kesalahan adalah "Password salah", arahkan ke halaman error.
+        window.location.href = "404.html"; // Gantilah "error.html" dengan halaman error yang sesuai.
+    } else if (result.message === "Selamat Datang") {
+        // Jika pesan adalah "Selamat Datang", arahkan ke halaman dashboard.
         window.location.href = "dashboard.html";
+    } else {
+        // Penanganan lainnya (pesan kesalahan lainnya)
+        window.location.href = "index.html";
     }
 }
