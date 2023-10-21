@@ -14,8 +14,15 @@ export default function PostSignUp(){
     postWithToken(target_url,tokenkey,tokenvalue,datainjson,responseData);
 
 }
-function responseData(result){
-    setInner("pesan",result.message);
-    setCookieWithExpireHour("token",result.token,2);
-    window.location.href = "dashboard.html";
+function responseData(result) {
+    if (result.error) {
+        // Jika terjadi kesalahan, tampilkan pesan kesalahan dan arahkan ke halaman error.
+        setInner("pesan", result.message);
+        window.location.href = "404.html"; // Gantilah "error.html" dengan halaman error yang sesuai.
+    } else {
+        // Jika tidak ada kesalahan, lanjutkan dengan logika yang ada.
+        setInner("pesan", result.message);
+        setCookieWithExpireHour("token", result.token, 2);
+        window.location.href = "dashboard.html";
+    }
 }
