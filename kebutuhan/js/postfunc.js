@@ -25,7 +25,7 @@ function responseData(result) {
         }
         window.location.href = "404.html"; // Gantilah "404.html" dengan halaman error yang sesuai.
     } else {
-        // Jika tidak ada kesalahan, lanjutkan dengan logika yang ada.
+        // Jika tidak ada kesalahan, lanjutkan dengan logika yang ada. tes tess
         setInner("pesan", result.message);
         setCookieWithExpireHour("token", result.token, 2);
         window.location.href = "dashboard.html";
