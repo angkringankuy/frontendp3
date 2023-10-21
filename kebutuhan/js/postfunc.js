@@ -16,9 +16,14 @@ export default function PostSignUp(){
 }
 function responseData(result) {
     if (result.error) {
-        // Jika terjadi kesalahan, tampilkan pesan kesalahan dan arahkan ke halaman error.
-        setInner("pesan", result.message);
-        window.location.href = "404.html"; // Gantilah "error.html" dengan halaman error yang sesuai.
+        if (result.message === "Password Salah") {
+            // Jika pesan kesalahan adalah "password salah", tampilkan pesan yang sesuai
+            setInner("pesan", "Password yang Anda masukkan salah. Silakan coba lagi.");
+        } else {
+            // Pesan kesalahan lainnya
+            setInner("pesan", result.message);
+        }
+        window.location.href = "404.html"; // Gantilah "404.html" dengan halaman error yang sesuai.
     } else {
         // Jika tidak ada kesalahan, lanjutkan dengan logika yang ada.
         setInner("pesan", result.message);
