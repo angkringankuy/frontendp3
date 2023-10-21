@@ -17,5 +17,5 @@ export default function PostSignUp(){
 function responseData(result){
     setInner("pesan",result.message);
     setCookieWithExpireHour("token",result.token,2);
-    window.location.href = "iii.html";
+    window.location.href = "dashboard.html";
 }
